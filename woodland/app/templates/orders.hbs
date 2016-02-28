@@ -1,0 +1,11 @@
+<div class="col-md-3"> 
+<h3>Order List: </h3>
+<ul class="list-group">
+{{#each model as |order|}}
+{{#link-to 'orders.order' order class='list-group-item' tagName='li'}} <i class='glyphicon glyphicon-fire text-success'> </i> {{order.name}} {{/link-to}}  
+  {{/each}}
+</ul>
+</div>
+
+{{outlet}}
+

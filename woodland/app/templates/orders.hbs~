@@ -1,0 +1,6 @@
+<ul>
+{{#each}}
+
+{{/each}}
+</li>
+{{outlet}}

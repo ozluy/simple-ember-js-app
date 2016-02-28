@@ -1,0 +1,22 @@
+<div class="col-md-6">
+<form >
+  <div class="form-group">
+    <label>Name</label>
+    {{input type="text" class="form-control" id="name" value=model.name placeholder="Your Name Here"}}
+  </div>
+{{#each model.items as |item|}}
+ <div class="input-group">
+    <label  class="input-group-addon"><button {{action "addToItemQuantity" item 10}}>+10</button> </label>
+
+    {{input type="number" class="form-control"  min="0" value=item.quantity }}
+    <label class="input-group-addon">{{item.product.title}},  ${{item.product.price}}</label>
+
+  </div>
+
+{{/each}} 
+ 
+  <button {{action "createOrder" model}} class="btn btn-primary btn-block btn-lg" >Place Order</button>
+</form>
+</div>
+
+{{outlet}}

@@ -1,0 +1,46 @@
+<div class="col-md-9">
+
+ <h2 class="head text,center"> Line Items</h2>
+
+<table class="table table-striped">
+	<thead>
+	<tr>
+	
+		<th>Item</th>
+		<th>Unit Price</th>
+		<th>Quantity</th>
+		<th>Cost</th>
+		<th>Cost %</th>
+		</tr>
+	</thead>
+	<tbody>
+	
+	 {{#each model.items as |lineItem|}}
+		<tr>
+		<td> <img class="img-circle" width="75px" src="{{lineItem.img}}"/> {{lineItem.title}}</td>
+		
+		<td> ${{lineItem.unitPrice}}</td>
+		<td> {{lineItem.quantity}}</td>
+		<td> $ {{lineItem.price}}</td>
+		<td> {{item-percentage itemPrice=lineItem.price orderPrice=model.totalPrice }}</td>
+		</tr>
+		
+		{{/each}}
+		<tr style="background-color:olive; color:#fff">
+		<td>Total: </td>		
+		<td> </td>
+		<td> </td>
+		<td> $ {{model.totalPrice}}</td>
+		<td> </td>
+		</tr>
+	</tbody>
+
+	
+</table>
+
+
+
+
+</div>
+
+{{outlet}}

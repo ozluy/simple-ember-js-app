@@ -1,0 +1,14 @@
+<style type="text/css">
+	.important{
+		font-weight: bold;
+	}
+</style>
+<span title="click to see details" class="{{if isImportant 'important'}}" {{action 'toggleDetails' on='click'}} >
+{{#if showDetails}}
+	${{itemPrice}} / ${{orderPrice}}
+{{else}}
+	{{percentage}}%
+{{/if}}
+{{yield}}
+
+</span>
